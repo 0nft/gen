@@ -32,8 +32,8 @@ export async function POST(req: Request) {
       قم بكتابة كل حكمة في سطر جديد.
     `);
 
-    const response = await result.response;
-    const text = response.text();
+    const response = await result.response; // تأكد من أن هذه الاستجابة صحيحة
+    const text = await response.text(); // إضافة await هنا
     const quotes = text.split("\n").filter((quote) => quote.trim());
 
     if (quotes.length === 0) {
